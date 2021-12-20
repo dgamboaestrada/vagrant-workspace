@@ -17,3 +17,8 @@ chown -f -R vagrant ~/.kube
 wget git.io/trans
 chmod +x trans
 mv trans /usr/bin/
+
+# Create vagrant bin dir
+mkdir  /home/vagrant/bin
+chown vagrant:vagrant /home/vagrant/bin
+echo 'export PATH=$PATH:/home/vagrant/bin' >> ~/.zshrc
