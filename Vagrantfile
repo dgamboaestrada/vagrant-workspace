@@ -2,7 +2,7 @@
 # vi: set ft=ruby :
 
 Vagrant.configure("2") do |config|
-  config.vm.box = "hashicorp/bionic64"
+  config.vm.box = "generic/ubuntu2204"
   config.vm.network "private_network", ip: "192.168.56.2"
   config.vm.synced_folder "./shared-folder", "/home/vagrant/shared-folder"
   config.vm.synced_folder "~/workspace", "/home/vagrant/workspace"
@@ -13,5 +13,5 @@ Vagrant.configure("2") do |config|
   end
 
   config.vm.provision "file", source: "./extras", destination: "/home/vagrant/extras"
-  config.vm.provision "shell", path: "./provision.sh"
+  #config.vm.provision "shell", path: "./provision.sh"
 end
